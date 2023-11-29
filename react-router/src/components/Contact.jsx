@@ -1,7 +1,20 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 export default function Contact() {
   return (
-    <div>This is contact us page</div>
-  )
+    <>
+      <header>
+        <h1>This is Contact Us page</h1>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            
+          </ul>
+        </nav>
+      </header>
+    </>
+  );
 }
