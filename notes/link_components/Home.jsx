@@ -1,25 +1,22 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
     <>
       <header>
+        <h1>This is Home Page</h1>
         <nav>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <Link to="about">About</Link>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">Contact</NavLink>
+              <Link to="contact">Contact</Link>
             </li>
           </ul>
         </nav>
       </header>
-       
     </>
   );
 }
