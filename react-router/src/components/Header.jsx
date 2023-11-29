@@ -1,14 +1,15 @@
 import React from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 function Header() {
   return (
-    <header>
+    <>
+      <header>
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/home">Home</NavLink>
           </li>
           <li>
             <NavLink to="/about">About</NavLink>
@@ -19,6 +20,8 @@ function Header() {
         </ul>
       </nav>
     </header>
+    <Outlet/>
+    </>
   );
 }
 
