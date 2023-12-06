@@ -1,22 +1,23 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./components/Home";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import "./style.css";
-import Error from "./components/Error";
+import Hello from "./components/Hello";
+import Post from "./components/Post";
+import Posts from "./components/Posts";
+
 function App() {
   return (
     <BrowserRouter>
+      <div className="App">
+      <Header />
       <Routes>
-        <Route path="/" element={<Header />}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-
-          <Route path="*" element={<Error />} />
+        <Route path="/" element={<Navigate to="/hello" />} />
+        <Route path="/hello/*" element={<Hello />}>
+          <Route path="world" element={<p>This is world!</p>} />
         </Route>
+        <Route path="/posts/" element={<Posts />} />
+        <Route path="/posts/:postId" element={<Post />} />
       </Routes>
+    </div>
     </BrowserRouter>
   );
 }
