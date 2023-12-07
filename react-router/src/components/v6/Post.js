@@ -7,6 +7,7 @@ export default function Post() {
     // navigate("/posts", {
     //   replace: true,
     // });
+    
     navigate(-1);
   }
 
