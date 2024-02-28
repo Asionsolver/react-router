@@ -1,8 +1,7 @@
-
 import { Form, useLoaderData } from "react-router-dom";
 
 export default function Contact() {
-  const {contact} = useLoaderData();
+  const { contact } = useLoaderData();
 
   return (
     <div id="contact">
@@ -24,7 +23,11 @@ export default function Contact() {
 
         {contact.twitter && (
           <p>
-            <a target="_blank" href={`https://twitter.com/${contact.twitter}`} rel="noreferrer">
+            <a
+              target="_blank"
+              href={`https://twitter.com/${contact.twitter}`}
+              rel="noreferrer"
+            >
               {contact.twitter}
             </a>
           </p>
