@@ -1,13 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import "./index.css";
-import Root from "./Root";
-import ErrorPage from "./Error";
 import Contact from "./Contact";
-import { getContactLoader, getContactsLoader } from "./loaders/contactsLoaders";
-import { createContactAction, editContactAction } from "./action/contactsActions";
 import EditContact from "./EditContact";
+import ErrorPage from "./Error";
+import Index from "./Index";
+import Root from "./Root";
+import {
+  createContactAction,
+  deleteContactAction,
+  editContactAction,
+} from "./action/contactsActions";
+import "./index.css";
+import { getContactLoader, getContactsLoader } from "./loaders/contactsLoaders";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +23,11 @@ const router = createBrowserRouter([
     action: createContactAction,
     children: [
       {
+        index: true,
+        element: <Index/>
+
+      },
+      {
         path: "/contacts/:contactId",
         element: <Contact />,
         loader: getContactLoader,
@@ -27,6 +37,12 @@ const router = createBrowserRouter([
         element: <EditContact />,
         loader: getContactLoader,
         action: editContactAction,
+      },
+      {
+        path: "/contacts/:contactId/destroy",
+        
+        action: deleteContactAction,
+        errorElement:  <div>Oops! There was an error.</div>,
       },
     ],
   },
