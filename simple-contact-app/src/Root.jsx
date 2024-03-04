@@ -44,7 +44,7 @@ export default function Root() {
               }}
             />
             <div id="search-spinner" aria-hidden hidden={!searching} />
-            
+            <div id="search-spinner" aria-hidden hidden={true}/>
             <div className="sr-only" aria-live="polite"></div>
           </Form>
           <Form method="post">
